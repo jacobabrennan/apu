@@ -50,12 +50,12 @@ export const RESPONSE_SONG_END = INDEX++;
 //== Pattern Building ==========================================================
 
 //-- Pattern Creation ----------------------------
-function pattern(rows, channelNumber) {
+export function pattern(rows, channelNumber) {
     return new Uint32Array(rows*channelNumber);
 }
 
 //-- Cell Parsing --------------------------------
-function cell(note, instrument, volume, effect) {
+export function cell(note, instrument, volume, effect) {
     let R = 0;
     if(Number.isFinite(note)) {
         R |= MASK_CELL_FLAG_NOTE | note << MASK_CELL_NOTE_OFFSET;
@@ -71,7 +71,7 @@ function cell(note, instrument, volume, effect) {
     }
     return R;
 }
-function cellParse(cellData32Bit) {
+export function cellParse(cellData32Bit) {
     let note = (cellData32Bit >> MASK_CELL_NOTE_OFFSET) & (Math.pow(2,MASK_CELL_NOTE_WIDTH)-1);
     let instrument = (cellData32Bit >> MASK_CELL_INSTRUMENT_OFFSET) & (Math.pow(2,MASK_CELL_INSTRUMENT_WIDTH)-1);
     let volume = (cellData32Bit >> MASK_CELL_VOLUME_OFFSET) & (Math.pow(2,MASK_CELL_VOLUME_WIDTH)-1);
@@ -83,7 +83,7 @@ function cellParse(cellData32Bit) {
         (cellData32Bit&MASK_CELL_FLAG_EFFECT)? effect : undefined,
     ];
 }
-function empty() {
+export function empty() {
     return 0;
 }
 
