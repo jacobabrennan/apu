@@ -1,6 +1,6 @@
 {
   "name": "@jacobabrennan/apu",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Chiptune Audio Synthesizer",
   "main": "audio_processor.js",
   "scripts": {
