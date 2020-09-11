@@ -1,0 +1,19 @@
+{
+  "name": "@jacobabrennan/apu",
+  "version": "0.0.0",
+  "description": "Chiptune Audio Synthesizer",
+  "main": "audio_processor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacobabrennan/apu.git"
+  },
+  "author": "Jacob A Brennan",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/jacobabrennan/apu/issues"
+  },
+  "homepage": "https://github.com/jacobabrennan/apu#readme"
+}
