@@ -48,8 +48,9 @@ export {
 //-- Audio Message Interface ---------------------
 import { RATE_SAMPLE } from './constants.js';
 export default class AudioMessageInterface {
-    constructor(handleMessage) {
+    constructor(handleMessage, url) {
         this.handleMessage = handleMessage;
+        this.url = url;
     }
     async setup() { // Cannot be a constructor. Must be initiated by user action.
         // Create audio context
@@ -58,7 +59,7 @@ export default class AudioMessageInterface {
         };
         const context = new AudioContext(optionsAudio);
         // Create audio processing worklet
-        await context.audioWorklet.addModule('http://localhost:8000/editor/node_modules/@jacobabrennan/apu/index.js');
+        await context.audioWorklet.addModule(this.url);
         const optionsProcessor = {
             outputChannelCount: [1], // mono sound
             // outputChannelCount: [2], // Stereo sound
