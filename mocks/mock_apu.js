@@ -24,7 +24,9 @@ export default class ApuMock {
         this.messageHandler = messageHandler;
         this.messageSend(RESPONSE_READY, {});
     }
-    process(output, bufferLength) {
+    process(inputs, outputs, parameters) {
+        const output = outputs[0][0];
+        let bufferLength = output.length;
         for(let index=0; index < bufferLength; index++) {
             output[index] = this.sample();
         }
