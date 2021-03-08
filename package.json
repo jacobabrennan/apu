@@ -3,8 +3,9 @@
   "version": "0.0.2",
   "description": "Chiptune Audio Synthesizer",
   "main": "audio_processor.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\""
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/jacobabrennan/apu/issues"
   },
-  "homepage": "https://github.com/jacobabrennan/apu#readme"
+  "homepage": "https://github.com/jacobabrennan/apu#readme",
+  "devDependencies": {
+    "mocha": "^8.3.1"
+  }
 }
