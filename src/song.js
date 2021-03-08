@@ -81,7 +81,7 @@ export default class Song extends AudioProcessor {
     playRow() {
         let jump = false;
         let patternCurrent = this.pattern[this.indexPattern];
-        if(this.indexRow >= patternCurrent.length / CHANNELS_NUMBER) {
+        if(this.indexRow >= patternCurrent.data.length / CHANNELS_NUMBER) {
             this.indexPattern++;
             patternCurrent = this.pattern[this.indexPattern];
             this.indexRow = 0;
